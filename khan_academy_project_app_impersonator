@@ -1,0 +1,19 @@
+CREATE TABLE ticketmaster (id Integer Primary Key, user_name TEXT, Favorites TEXT, My_events TEXT);
+
+INSERT INTO ticketmaster VALUES (1, "bebette_alexis", "Dirty_Heads", "none");
+INSERT INTO ticketmaster VALUES (2, "RC_love", "Oliver_Tree", "3");
+INSERT INTO ticketmaster VALUES (3, "abc_lala", "Rexx_Life_Raj", 2);
+INSERT INTO ticketmaster VALUES (4, "music_lover", "everyone", 1);
+INSERT INTO ticketmaster VALUES (5, "babe_831", "Carla_Morrison", 3);
+INSERT INTO ticketmaster VALUES (6, "alex_123", "AJR", "none");
+
+SELECT * FROM ticketmaster;
+
+UPDATE ticketmaster SET favorites = "Deorro" where id=1;
+UPDATE ticketmaster SET favorites = "Natalia_Lafourcade" WHERE id=6;
+
+SELECT * FROM ticketmaster;
+
+DELETE FROM ticketmaster WHERE id = 4;
+
+SELECT * FROM ticketmaster;
