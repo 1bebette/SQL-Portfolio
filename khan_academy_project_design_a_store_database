@@ -1,0 +1,20 @@
+CREATE TABLE store_database (id INTEGER PRIMARY KEY, item TEXT, quantity_in_stock INTEGER, size TEXT, price INTEGER, units_sold INTEGER);
+
+INSERT INTO store_database VALUES (1, "shirts", 20, "L", 25, 10);
+INSERT INTO store_database VALUES (2, "shirts", 15, "S", 25, 10);
+INSERT INTO store_database VALUES (3, "shirts", 18, "M", 25, 15);
+INSERT INTO store_database VALUES (4, "pants", 30, "M", 30, 15);
+INSERT INTO store_database VALUES (5, "pants", 25, "S", 30, 5);
+INSERT INTO store_database VALUES (6, "pants", 20, "L", 30, 10);
+INSERT INTO store_database VALUES (7, "jackets", 10, "S", 50, 40);
+INSERT INTO store_database VALUES (8, "jackets", 15, "M", 50, 15);
+INSERT INTO store_database VALUES (9, "jackets", 50, "L", 50, 20);
+INSERT INTO store_database VALUES (10, "sweaters", 20, "S", 60, 30);
+INSERT INTO store_database VALUES (11, "sweaters", 25, "M", 60, 25);
+INSERT INTO store_database VALUES (12, "sweaters", 30, "L", 60, 10);
+INSERT INTO store_database VALUES (13, "hats", 15, "OS", 20, 15);
+INSERT INTO store_database VALUES (14, "socks", 20, "OS", 20, 10);
+INSERT INTO store_database VALUES (15, "slides", 10, "OS", 15, 15);
+SELECT * FROM store_database ORDER BY price;
+SELECT id, item, size, MAX (units_sold) FROM store_database;
+SELECT id, item, size, MIN (units_sold) FROM store_database;
