@@ -1,0 +1,39 @@
+/* information gathered from https://ballotpedia.org/United_States_Senate_election_in_California,_2022 on July 15, 2022*/
+
+CREATE TABLE US_Senate_California_Candidates (id INTEGER PRIMARY KEY, first_name TEXT, last_name TEXT, party TEXT);
+INSERT INTO US_Senate_California_Candidates VALUES (1, "Alex", "Padilla", "Democrat");
+INSERT INTO US_Senate_California_Candidates VALUES (2, "Dan", "O'Dowd", "Democrat");
+INSERT INTO US_Senate_California_Candidates VALUES (3, "Mark", "Meuser", "Republican");
+INSERT INTO US_Senate_California_Candidates VALUES (4, "Jonathan", "Elist", "Republican");
+INSERT INTO US_Senate_California_Candidates VALUES (5, "Cordie", "williams", "Republican");
+INSERT INTO US_Senate_California_Candidates VALUES (6, "James", "P._Bradley", "Republican");
+INSERT INTO US_Senate_California_Candidates VALUES (7, "Myron", "Hall", "Republican");
+INSERT INTO US_Senate_California_Candidates VALUES (8, "Sarah", "Sun_Liew", "Republican");
+INSERT INTO US_Senate_California_Candidates VALUES (9, "Lily", "Zhou", "Republican");
+INSERT INTO US_Senate_California_Candidates VALUES (10, "Chuck", "Smith", "Republican");
+INSERT INTO US_Senate_California_Candidates VALUES (11, "Timothy", "Ursich_Jr", "Democrat");
+INSERT INTO US_Senate_California_Candidates VALUES (12, "Robert", "Lucero", "Republican");
+INSERT INTO US_Senate_California_Candidates VALUES (13, "Daphne", "Bradford", "Independent");
+
+CREATE TABLE CA_candidate_Campaign_Finance (candidate_id INTEGER PRIMARY KEY, receipts INTEGER, disbursements INTEGER, cash_on_hand INTEGER);
+INSERT INTO CA_candidate_Campaign_Finance VALUES (1, 9935420, 2963382, 7206869);
+INSERT INTO CA_candidate_Campaign_Finance VALUES (2, 7679667, 7494655, 185012);
+INSERT INTO CA_candidate_Campaign_Finance VALUES (3, 413953, 394760, 19194);
+INSERT INTO CA_candidate_Campaign_Finance VALUES (4, 367602, 289189, 78413);
+INSERT INTO CA_candidate_Campaign_Finance VALUES (5, 345862, 294595, 51267);
+INSERT INTO CA_candidate_Campaign_Finance VALUES (6, 136553, 139829, 377);
+INSERT INTO CA_candidate_Campaign_Finance VALUES (7, 88662, 87076, 1586);
+INSERT INTO CA_candidate_Campaign_Finance VALUES (8, 69400, 40653, -149);
+INSERT INTO CA_candidate_Campaign_Finance VALUES (9, 31742, 29492, 223);
+INSERT INTO CA_candidate_Campaign_Finance VALUES (10, 15590, 15244, 346);
+INSERT INTO CA_candidate_Campaign_Finance VALUES (11, 14712, 710, 14002);
+INSERT INTO CA_candidate_Campaign_Finance VALUES (12, 13831, 10087, 3372);
+INSERT INTO CA_candidate_Campaign_Finance VALUES (13, 9893, 500, 9393);
+
+Select US_Senate_California_Candidates.first_name, US_Senate_California_candidates.last_name, US_Senate_California_Candidates.party,CA_candidate_campaign_finance.cash_on_hand 
+FROM US_Senate_California_Candidates 
+LEFT OUTER JOIN CA_Candidate_Campaign_Finance 
+ON US_Senate_California_Candidates.id = CA_candidate_Campaign_Finance.candidate_id
+ORDER BY cash_on_hand DESC;
+
+
