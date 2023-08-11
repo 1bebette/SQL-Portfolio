@@ -1,12 +1,14 @@
 /** Favorite books:
-Rain of Gold (1)
-The Giver (2)
-Bless Me Ultima (3)
+Bless Me Ultima (1)
+Rain of Gold (2)
+Dear America, Notes of an Undocumented Citizen (3)
+Gone but not Forgotten (4)
 **/
 
-CREATE TABLE books (id INTEGER PRIMARY KEY, name TEXT, rating INTEGER);
+CREATE TABLE Book_List (id INTEGER PRIMARY KEY, name TEXT, rating NUMERIC);
 
-INSERT INTO books VALUES (1, "Rain of Gold", 1);
-INSERT INTO books VALUES (2, "The Giver", 2); 
-INSERT INTO books VALUES (3, "Bless Me Ultima", 3);
-SELECT * FROM books;
+INSERT INTO Book_List VALUES(1, "Bless Me Ultima", 3);
+INSERT INTO Book_list VALUES(2, "Rain of Gold", 1);
+INSERT INTO Book_list VALUES(3, "Dear America, Notes of an Undocummented Citizen", 2);
+INSERT INTO Book_list VALUES(4, "Gone but not Forgotten", 4);
+SELECT * from Book_list;
