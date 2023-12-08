@@ -1,0 +1,42 @@
+# This project analyzes the top 50 songs on Spotify in 2021. 
+# Data was derived from https://www.kaggle.com/datasets/equinxx/spotify-top-50-songs-in-2021/
+
+
+# How long are the top 10 most popular songs and who are the artists?
+SELECT track_name, artist_name, duration_ms
+FROM BIT_DB.Spotifydata
+order by popularity DESC
+limit 10;
+
+
+# What artist(s) has the most songs on this list?
+SELECT artist_name, count(artist_name) as song_count
+FROM BIT_DB.Spotifydata
+GROUP BY artist_name
+order by song_count DESC
+LIMIT 2;
+
+
+# Classify the optimum workout intensity level for each song and organize them from highest to lowest intensity. 
+SELECT track_name, artist_name,
+CASE 
+    WHEN tempo >= "140" THEN "high_intesity"
+    WHEN tempo >= "100" THEN "mid_intensity"
+    ELSE "low_intensity" END as " workout_intensity_level"
+FROM BIT_DB.Spotifydata
+Order BY tempo DESC;
+
+
+# What's the average dancibility for the 10 most popular songs?
+SELECT avg(danceability) as Top_10_AVG_Danceability
+FROM (
+    SELECT * FROM Spotifydata 
+    ORDER BY popularity DESC
+    LIMIT 10);
+
+
+# What's the shortest song? 
+SELECT track_name
+from Spotifydata
+ORDER BY duration_ms asc
+limit 1;
