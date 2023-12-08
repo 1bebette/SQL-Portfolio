@@ -52,7 +52,7 @@ FROM BIT_DB.Spotifydata
 Order BY tempo DESC;
 
 
-# What's the average dancibility for the 10 most popular songs?
+# What's the average danceability for the 10 most popular songs?
 SELECT avg(danceability) as Top_10_AVG_Danceability
 FROM (
     SELECT * FROM Spotifydata 
